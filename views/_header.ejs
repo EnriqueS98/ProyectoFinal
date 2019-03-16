@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Control Escolar</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="node_modules\sweetalert2\dist\sweetalert2.css">
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <script>
+        function ok() {
+            Swal.fire(
+                'Alumno Evaluado!',
+                'success'
+            )
+        }
+    </script>
+    
+</head>
+<body>
+    
+    <div class="navbar navbar-default navbar-static-top" role = "navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="">Control Escolar</a>
+    </div>
+        <ul class ="nav navbar-nav navbar-right">
+        <% if (currentUser){ %>
+        <li>
+        <li><a>Hola, <%= currentUser.name()%></a><li>
+        </li>
+        <li>
+            <a href="/logout">Salir</a>
+        <li>
+        <% } else {%>  
+        <li>
+            <a href="/singin">Entrar</a>
+        </li>
+        <li>
+            <a href="/evaluacion">Calificar</a>
+        </li>
+        <li>
+            <a href="/evaluacion_list">Estudiantes Registrados</a>
+        </li>
+        <li>
+            <a href="/index">Graficas</a>
+        </li>
+        <% } %>
+        </ul>
+    </div>
+</div>
+<div class="container">
+    <% errors.forEach(function(error) { %>
+        <div class="alert alert-danger" role="alert">
+    <%= error %>
+        </div>
+    <% }) %>
+    <% infos.forEach(function(info) { %>
+        <div class= "alert alert-info" role="alert">
+    <%= info %>
+        </div>
+    <% }) %>
+

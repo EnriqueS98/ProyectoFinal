@@ -1,0 +1,34 @@
+<% include _header%>
+
+<h1>Registro de Alumno</h1>
+
+<form action = "/evaluacion" method="post">
+    <div class ="form-group">
+        <input name="nombre" type="text" class="form-control"
+        placeholder="Nombre" required autofocus/>
+    </div>
+    <div class="form-group">
+        <input name="apellido" type="text" class="form-control"
+        placeholder="apellidlo" required/>
+    </div>
+    <div class ="form-group">
+        <input name="sexo" type="text" class="form-control"
+        placeholder="Sexo" required autofocus/>
+    </div>
+  
+    <div class="from-group">
+        <input name="matricula" type="text" class="form-control"
+        placeholder="Matricula" required autofocus/>
+    </div>
+
+    <div class="from-group">
+        <input name="calificacion" type="text" class="form-control"
+        placeholder="Calificacion" required autofocus/>
+    </div>
+    
+        <input type="submit" value="Calificar" onclick="ok()" class="btn btn-primary btn-block"/>
+    
+</form>
+
+
+<% include _footer%>
